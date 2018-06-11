@@ -18,7 +18,7 @@ struct Node *_create_node(int data, struct Node *lchild, struct Node *rchild)
 
 struct Node *_create_leaf_node(int data)
 {
-	_create_node(data, NULL, NULL);
+	return _create_node(data, NULL, NULL);
 }
 
 void _free_node(struct Node *node)
