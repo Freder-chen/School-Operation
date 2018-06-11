@@ -2,12 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct NodeImformationOfSearch {
-	struct Node *node;
-	int level;
-	struct Node *parent;
-};
-
 /* Low Level Handing */
 
 struct Node *_create_node(int data, struct Node *lchild, struct Node *rchild)
