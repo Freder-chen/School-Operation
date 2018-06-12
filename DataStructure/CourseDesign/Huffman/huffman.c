@@ -258,7 +258,40 @@ void print_code()
 	free(code);
 }
 
+void _print_tree(char *arr, int depth)
+{
+	int i, j, k, index = 0;
+	for (j = 0; j < depth; j++)
+	{
+		int w = 1 << (depth - j + 1);
+		if (j == 0)
+			printf("%*c\n", w, '_');
+		else
+		{
+			for (i = 0; i < 1 << (j - 1); i++)
+			{
+				printf("%*c", w + 1, ' ');
+				for (k = 0; k < w - 3; k++) printf("_");
+				printf("/ \\");
+				for (k = 0; k < w - 3; k++) printf("_");
+				printf("%*c", w + 2, ' ');
+			}
+			printf("\n");
+			for (i = 0; i < 1 << (j - 1); i++)
+			{
+				printf("%*c/%*c_%*c", w, '_', w * 2 - 2, '\\', w, ' ');
+			}
+			printf("\n");
+		}
+		for (i = 0; i < 1 << j; i++)
+		{
+			printf("%*c%c)%*c", w - 1, '(', arr[index++], w - 1, ' ');
+		}
+		printf("\n");
+	}
+}
+
 void print_tree(struct HuffmanTree *tree)
 {
-	
+	char *nodes = (char *)malloc(sizeof(char) *)
 }
