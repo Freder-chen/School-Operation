@@ -1,12 +1,6 @@
 #ifndef __BALANCED_TREE__
 #define __BALANCED_TREE__
 
-enum TreeStatus
-{
-	Balanced = 1,
-	None = 0,
-};
-
 struct Node {
 	int data;
 	struct Node *lchild;
