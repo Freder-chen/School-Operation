@@ -274,6 +274,7 @@ void print_code()
 	free(code);
 }
 
+<<<<<<< HEAD
 // Print Tree
 int _height(struct HuffmanNode *node)
 {
@@ -290,11 +291,44 @@ void _get_nodes(struct HuffmanNode *node, int index, char *text)
 		text[index - 1] = node->ch == '\0' ? '_' : node->ch;
 		_get_nodes(node->lchild, 2 * index, text);
 		_get_nodes(node->rchild, 2 * index + 1, text);
+=======
+void _print_tree(char *arr, int depth)
+{
+	int i, j, k, index = 0;
+	for (j = 0; j < depth; j++)
+	{
+		int w = 1 << (depth - j + 1);
+		if (j == 0)
+			printf("%*c\n", w, '_');
+		else
+		{
+			for (i = 0; i < 1 << (j - 1); i++)
+			{
+				printf("%*c", w + 1, ' ');
+				for (k = 0; k < w - 3; k++) printf("_");
+				printf("/ \\");
+				for (k = 0; k < w - 3; k++) printf("_");
+				printf("%*c", w + 2, ' ');
+			}
+			printf("\n");
+			for (i = 0; i < 1 << (j - 1); i++)
+			{
+				printf("%*c/%*c_%*c", w, '_', w * 2 - 2, '\\', w, ' ');
+			}
+			printf("\n");
+		}
+		for (i = 0; i < 1 << j; i++)
+		{
+			printf("%*c%c)%*c", w - 1, '(', arr[index++], w - 1, ' ');
+		}
+		printf("\n");
+>>>>>>> b06bb64c65f3e5d032868368dc606d78a97e917d
 	}
 }
 
 void print_tree(struct HuffmanTree *tree)
 {
+<<<<<<< HEAD
 	int depth = _height(tree->root);
 
 	char *nodes = (char *)malloc(sizeof(char) * (1 << depth));
@@ -305,3 +339,7 @@ void print_tree(struct HuffmanTree *tree)
 
 	free(nodes);
 }
+=======
+	char *nodes = (char *)malloc(sizeof(char) *)
+}
+>>>>>>> b06bb64c65f3e5d032868368dc606d78a97e917d
