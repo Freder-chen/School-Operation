@@ -1,4 +1,5 @@
 #include "huffman.h"
+#include "..\common.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -19,6 +20,18 @@ struct HuffmanNode *_create_a_huffman_node(char ch, int weight, struct HuffmanNo
 	node->lchild = lchild;
 	node->rchild = rchild;
 	return node;
+}
+
+void _free_node(struct HuffmanNode *node)
+{
+	free(node);
+}
+
+void _free_tree_node(struct HuffmanNode *root)
+{
+	if (root->lchild) _free_tree_node(root->lchild);
+	if (root->rchild) _free_tree_node(root->rchild);
+	free(root);
 }
 
 void _get_huffman_code(struct HuffmanNode *node, char *code, struct HuffmanCode *ncode, int *cl)
@@ -168,8 +181,11 @@ struct Huffman *init_huffman()
 void free_huffman(struct Huffman *huffman)
 {
 	// Free Tree
-
+	_free_tree_node(huffman->tree->root);
+	free(huffman->tree);
 	// Free Code Array
+	free(huffman->code_arr->arr);
+	free(huffman->code_arr);
 }
 
 void coding(struct HuffmanCodeArr *code_arr)
@@ -258,7 +274,34 @@ void print_code()
 	free(code);
 }
 
+// Print Tree
+int _height(struct HuffmanNode *node)
+{
+	if (node == NULL) return 0;
+	int l = _height(node->lchild);
+	int r = _height(node->rchild);
+	return (l >= r ? l : r) + 1;
+}
+
+void _get_nodes(struct HuffmanNode *node, int index, char *text)
+{
+	if (node != NULL)
+	{
+		text[index - 1] = node->ch == '\0' ? '_' : node->ch;
+		_get_nodes(node->lchild, 2 * index, text);
+		_get_nodes(node->rchild, 2 * index + 1, text);
+	}
+}
+
 void print_tree(struct HuffmanTree *tree)
 {
-	
+	int depth = _height(tree->root);
+
+	char *nodes = (char *)malloc(sizeof(char) * (1 << depth));
+	memset(nodes, '\0', sizeof(char) * (1 << depth - 1));
+
+	_get_nodes(tree->root, 1, nodes);
+	draw_tree(nodes, depth);
+
+	free(nodes);
 }

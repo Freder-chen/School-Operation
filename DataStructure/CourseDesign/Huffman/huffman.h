@@ -35,7 +35,6 @@ struct Huffman {
 
 struct Huffman *init_huffman();
 
-// TO-DO
 void free_huffman(struct Huffman *huffman);
 
 void coding(struct HuffmanCodeArr *code_arr);
@@ -44,7 +43,6 @@ void decoding(struct HuffmanTree *tree);
 
 void print_code();
 
-// TO-DO
 void print_tree(struct HuffmanTree *tree);
 
 #endif
