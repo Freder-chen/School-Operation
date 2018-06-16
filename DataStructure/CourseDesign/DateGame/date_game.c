@@ -1,33 +1,31 @@
-// Begin: 1900  1 1
-// End  : 2001 11 4
+// 在 day < mouth.day 的情况下，mouth + day 的下一个变换会奇偶互换；
+// 在 day = mouth.day 时，
+//     下面讨论这种情况，
+//     { (1, 31), (2, 28(or 29)), (3, 31), (4, 30), (5, 31), (6, 30), (7, 31), (8, 31), (9, 30), (10, 31), (11, 30), (12, 31) }
+//     1. 当 (mouth + day) % 2 == 1, 有 { (2, 29), (8, 31), (9, 30), (10, 31), (11, 30), (12, 31) },
+//     他们中能由奇转奇的只有 { (9, 30), (11, 30) }；
+//     2. 当 (mouth + day) % 2 == 0, 有 { (1, 31), (2, 28), (3, 31), (4, 30), (5, 31), (6, 30), (7, 31) },
+//     他们中圈都能由偶转奇。
+// 由于 2001.11.4 的 mouth + day 为奇，故只有先手到奇或 { (9, 30), (11, 30) } 时能赢。
+
 #include <stdio.h>
-
-enum Mouth {
-	CommonFeb = 28,
-	LeapFeb = 29,
-	Small = 30,
-	Large = 31
-};
-
-struct Year { enum Mouth mouth[12]; }
-CommonYear = {Large, CommonFeb, Large, Small, Large, Small, Large, Large, Small, Large, Small, Large},
-LeapYear   = {Large, LeapFeb,   Large, Small, Large, Small, Large, Large, Small, Large, Small, Large};
-
-struct Current {
-	int year;
-	int mouth;
-	int day;
-};
-
-void print_year(const struct Year year)
-{
-	int i;
-	for (i = 0; i < 12; i++)
-		printf("%d ", year.mouth[i]);
-	printf("\n");
-}
 
 int main()
 {
-	print_year(LeapYear);
+	int year, mouth, day;
+
+	printf("%s\n", "Please input a date between 1900.1.1 to 2001.11.4");
+
+	while (scanf("%d%d%d", &year, &mouth, &day) != EOF)
+	{
+		printf("%s\n", (mouth + day) % 2 == 0 || (mouth == 9 && day == 30) || (mouth == 11 && day == 30) ? "Yes" : "No");
+	}
+
+	return 0;
 }
+
+
+
+
+
+
