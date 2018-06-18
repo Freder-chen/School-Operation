@@ -12,7 +12,6 @@ int main()
 
 	del_element(tree, 1);
 
-
 	free_tree(tree);
 	return 0;
 }

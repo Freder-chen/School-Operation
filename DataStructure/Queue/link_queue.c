@@ -30,7 +30,7 @@ void free_queue(struct LinkedQueue *queue)
 {
 	while (queue->front != queue->rear)
 	{
-		pop_elem(queue);
+		pop_queue_elem(queue);
 	}
 	free(queue);
 }

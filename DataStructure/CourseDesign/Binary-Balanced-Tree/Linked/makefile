@@ -1,14 +1,12 @@
-cc = gcc
-prom = balanced_tree
-deps = $(shell find ./ -name "*.h")
-src = $(shell find ./ -name "*.c")
-obj = $(src:%.c=%.o)
+balanced_tree_test: balanced_tree.o balanced_tree_test.o
+	gcc balanced_tree_test.o balanced_tree.o -o balanced_tree_test
+	rm -f balanced_tree_test.o balanced_tree.o
 
-$(prom): $(obj)
-	$(cc) -o $(prom) $(obj)
+balanced_tree.o: balanced_tree.c balanced_tree.h
+	gcc -c balanced_tree.c -o balanced_tree.o
 
-%.o: %.c $(deps)
-	$(cc) -c $< -o $@
+balanced_tree_test.o: balanced_tree_test.c
+	gcc -c balanced_tree_test.c -o balanced_tree_test.o
 
 clean:
-	rm -rf $(obj) $(prom)
+	rm -f balanced_tree_test balanced_tree_test.exe
