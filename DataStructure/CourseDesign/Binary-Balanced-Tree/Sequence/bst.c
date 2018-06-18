@@ -57,7 +57,7 @@ void _insert_node(Element nodes[], Element dest, int i)
 int _traverse_tree_func(Element *nodes, int len, int index, int level, int (*func)(Element *, int, int))
 {
 	int sum = 0;
-	if (index < 1 << len - 1 && nodes[index] != InvalidValue)
+	if (index < (1 << len) - 1 && nodes[index] != InvalidValue)
 	{
 		sum += _traverse_tree_func(nodes, len, 2 * index + 1, level + 1, func);
 		sum += func(nodes, index, level);
@@ -68,7 +68,7 @@ int _traverse_tree_func(Element *nodes, int len, int index, int level, int (*fun
 
 int _find_element(Element *nodes, int len, int index, Element element)
 {
-	if (index < 1 << len - 1 && nodes[index] != InvalidValue)
+	if (index < (1 << len) - 1 && nodes[index] != InvalidValue)
 	{
 		if (nodes[index] != element)
 		{
@@ -86,14 +86,14 @@ int _find_element(Element *nodes, int len, int index, Element element)
 
 void _delete_node(Element *nodes, int len, int index)
 {
-	if (index >= 1 << len - 1 || nodes[index] == InvalidValue) return;
+	if (index >= (1 << len) - 1 || nodes[index] == InvalidValue) return;
 
 	int i = index;
-	if (2 * i + 1 < 1 << len - 1 && nodes[2 * i + 1] != InvalidValue)
+	if (2 * i + 1 < (1 << len) - 1 && nodes[2 * i + 1] != InvalidValue)
 	{
 		// Left
 		i = 2 * i + 1;
-		while (2 * i + 2 < 1 << len - 1 && nodes[2 * i + 2] != InvalidValue)
+		while (2 * i + 2 < (1 << len) - 1 && nodes[2 * i + 2] != InvalidValue)
 		{
 			i = 2 * i + 2;
 		}
@@ -101,11 +101,11 @@ void _delete_node(Element *nodes, int len, int index)
 		nodes[index] = nodes[i];
 		_delete_node(nodes, len, i);
 	}
-	else if (2 * i + 2 < 1 << len - 1 && nodes[2 * i + 2] != InvalidValue)
+	else if (2 * i + 2 < (1 << len) - 1 && nodes[2 * i + 2] != InvalidValue)
 	{
 		// Right
 		i = 2 * i + 2;
-		while (2 * i + 1 < 1 << len - 1 && nodes[2 * i + 1] != InvalidValue)
+		while (2 * i + 1 < (1 << len) - 1 && nodes[2 * i + 1] != InvalidValue)
 		{
 			i = 2 * i + 1;
 		}
@@ -125,7 +125,7 @@ struct Tree *create_tree(Element elems[], int len)
 {
 	int i;
 
-	Element *nodes = _init_nodes(1 << len - 1);
+	Element *nodes = _init_nodes((1 << len) - 1);
 	for (i = 0; i < len; i++)
 	{
 		_insert_node(nodes, elems[i], 0);
@@ -160,8 +160,6 @@ float average_length_of_search(struct Tree *tree)
 }
 
 // Delete Element
-
-
 void del_element(struct Tree *tree, Element element)
 {
 	int index = _find_element(tree->nodes, tree->len, 0, element);
