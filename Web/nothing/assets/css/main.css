@@ -1,0 +1,339 @@
+/* Reset */
+* {
+    padding:0;
+    margin:0;
+}
+h3, p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+h3 {
+    font-size: 1.3em;
+}
+hr {
+    border: 0;
+    border-bottom: solid 1px;
+    margin: 2rem 0;
+}
+section {
+    display: block;
+}
+div {
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* Header */
+#header {
+    background: rgba(255, 255, 255, 0.9);
+    cursor: default;
+    height: 3.25em;
+    top: 0;
+    left: 0;
+    line-height: 3.25em;
+    position: fixed;
+    text-align: right;
+    width: 100%;
+    z-index: 10001;
+}
+    #header > .logo {
+        display: inline-block;
+        line-height: inherit;
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        height: inherit;
+        left: 1.25rem;
+        top: 0;
+    }
+        #header > .logo a {
+            text-decoration: none;
+            font-size: 1.25rem;
+            color: #000;
+        }
+        #header > .logo span {
+            font-weight: 300;
+            font-size: .75rem;
+            color: rgba(0, 0, 0, 0.5);
+        }
+        
+    #header .toggle {
+        text-decoration: none;
+        display: inline-block;
+        padding: 0 3em;
+        color: #a6a6a6;
+        cursor: pointer;
+    }
+        #header .toggle span {
+            display: none;
+        }
+        #header .toggle:last-child {
+            /*padding-right: 1.25em;*/
+        }
+        #header .toggle:hover {
+            color: #bbb;
+        }
+            #header .toggle .menu {
+                border-top-width: 1px;
+                display: none;
+                position: absolute;
+                background: rgba(255, 255, 255, 0.9);
+                text-align: center;
+                /*padding-left: 10%;*/
+                width: 100%;
+                right: 0;
+            }
+            #header .toggle:hover .menu {
+                display: block;
+                font-size: 1.2rem;
+            }
+                #header .toggle .menu a {
+                    color: #bbb;
+                    text-decoration: none;
+                    display: block;
+                }
+                #header .toggle .menu a:hover {
+                    text-decoration: underline;
+                    color: #666;
+                }
+
+/* Banner */
+/*#banner {
+    display: -ms-flexbox;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-image: url("../../images/banner.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top: 0;
+    min-height: 100vh;
+    height: 100vh !important;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}*/
+
+/* Wapper */
+.wrapper {
+    padding: 6rem 0 2rem 0;
+    position: relative;
+    margin: 0;
+}
+    .wrapper > .inner {
+        margin: 0 auto;
+        width: 90%;
+    }
+    .wrapper.style2 {
+        background-color: #f2f2f2;
+        color: #a6a6a6;
+    }
+        .wrapper.style2 .box {
+            border-color: rgba(0, 0, 0, 0.15);
+        }
+        .wrapper.style2 h2 {
+            color: #000;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        .wrapper.style2 header p {
+            color: #999999;
+        }
+        .wrapper.style2 hr {
+            border-bottom-color: rgba(0, 0, 0, 0.15);
+        }
+
+    .wrapper.style3 {
+        background-color: #f2f2f2;
+        color: #bfbfbf;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        position: relative;
+        padding: 1rem 0 1rem 0;
+    }
+        .wrapper.style3 header p {
+            color: #999999;
+        }
+        .wrapper.style3 header h2 + hr + p {
+            font-size: 0.5rem;
+            margin-top: 0.1rem;
+        }
+        .wrapper.style3 hr {
+            border-bottom-color: rgba(0, 0, 0, 0.15);
+            margin: 0.8rem;
+        }
+
+        .box {
+            margin-bottom: 2rem;
+            background: #FFF;
+            padding: 2rem;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+            .box > :last-child, .box > :last-child > :last-child, .box > :last-child > :last-child > :last-child {
+                margin-bottom: 0;
+            }
+            .image {
+                border: 0;
+                display: inline-block;
+                position: relative;
+            }
+                .image img {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 60%;
+                }
+                .image.fit {
+                    display: block;
+                    width: 100%;
+                }
+            .content {
+                margin-bottom: 2rem;
+                background: #FFF;
+                padding: 2rem;
+                z-index: 1;
+            }
+                .align-center {
+                    text-align: center;
+                }
+                .content header h2 + p {
+                    font-size: 1.25rem;
+                    margin-top: -1rem;
+                }
+                .content hr + p {
+                    margin-top: 1.8rem;
+                }
+                .content header p {
+                    position: relative;
+                    margin: 0 0 1rem 0;
+                }
+
+        #flexgrid {
+            width: 100%;
+            margin: 0 0 2.5rem 0;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+            align-items: stretch;
+        }
+            #flexgrid header h2 {
+                font-size: 1.75rem;
+                text-transform: uppercase;
+                font-weight: 400;
+                line-height: 1.5;
+                margin: 0 0 1.5rem 0;
+            }
+            #flexgrid > * {
+                padding: 3rem;
+                display:inline-block;
+                box-sizing: border-box;
+                width: 350px;
+                background-color: #FFF;
+            }
+            #flexgrid > div {
+                border-style: solid;
+                border-color: rgba(125, 125, 125, 0.25);
+                border-left-width: 1px;
+                border-top-width: 1px;
+                border-right-width: 1px;
+                border-bottom-width: 1px;
+                white-space: normal;
+                text-align: center;
+                overflow: hidden;
+                height: 480px;
+            }
+                #flexgrid > div h3 {
+                    color: gray;
+                }
+                #flexgrid > div img {
+                    height: 150px;
+                    width: 150px;
+                    padding: 0 0 1.5rem 0;
+                }
+
+        .grid-style {
+            align-items: stretch;
+            flex-wrap: wrap;
+            display: flex;
+            width: 100%;
+            text-align: center;
+        }
+            .grid-style > div {
+                overflow: hidden;
+                margin-right: auto;
+                margin-left: auto;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                width: 250px;
+                height: 400px;
+            }
+                .grid-style > div img {
+                    padding: 2rem;
+                    height: 150px;
+                    width: 150px;
+                }
+                .grid-style > div .bar {
+                    padding: 0;
+                    margin: 0;
+                    /*width: ;*/
+                    transition: 0.5s;
+                }
+                    .bar .inside-bar {
+                        height: 400px;
+                        background: #FFF;
+                    }
+                    .bar .outside-bar {
+                        height: 400px;
+                        background: #FFF;
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                    }
+
+        @media screen and (max-width: 1200px) and (min-width: 880px) {
+            .grid-style > div {
+                width: 380px;
+                height: 500px;
+            }
+                .bar .inside-bar {
+                    height: 500px;
+                }
+                .bar .outside-bar {
+                    height: 500px;
+                }
+        }
+        @media screen and (max-width: 880px) {
+            .grid-style > div {
+                width: 300px;
+                height: 400px;
+            }
+                .bar .inside-bar {
+                    height: 400px;
+                }
+                .bar .outside-bar {
+                    height: 400px;
+                }
+        }
+
+#four .inner {
+    width: 80%;
+}
+
+#footer .copyright {
+    color: #bbb;
+    font-size: 0.9rem;
+    margin: 0 0 2rem 0;
+    text-align: center;
+}

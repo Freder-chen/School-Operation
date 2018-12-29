@@ -371,7 +371,7 @@ void delete_vertex(struct Graph *graph, char element)
 
 int is_connected_graph(struct Graph *graph)
 {
-	int i, j;
+	int i, j, k;
 	
 	int status = 1;
 	int **edge_matrix = _get_edge_matrix(graph);
@@ -380,9 +380,20 @@ int is_connected_graph(struct Graph *graph)
 	{
 		for (j = 0; j < graph->scope; j++)
 		{
-			if (edge_matrix[i][j])
+			if (!edge_matrix[i][j]) edge_matrix[i][j] = 1000000;
+		}
+	}
+
+	for (k = 0; k < graph->scope; k++)
+	{
+		for (i = 0; i < graph->scope; i++)
+		{
+			for (j = 0; j < graph->scope; j++)
 			{
-				edge_matrix[j][i] = edge_matrix[i][j];
+				if (edge_matrix[i][j] > edge_matrix[i][k] + edge_matrix[k][j])
+				{
+					edge_matrix[i][j] = edge_matrix[i][k] + edge_matrix[k][j];
+				}
 			}
 		}
 	}
@@ -529,5 +540,3 @@ struct SequenceGraph *prim(struct SequenceGraph *graph, int index)
 	printf("\n");
 	return g;
 }
-
-

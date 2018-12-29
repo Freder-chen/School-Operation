@@ -11,5 +11,8 @@ huffman.o: huffman.c huffman.h ../common.h
 huffman_test.o: huffman_test.c huffman.h ../common.h
 	gcc -c huffman_test.c -o huffman_test.o
 
+run:
+	./huffman_test
+
 clean:
 	rm -f huffman_test huffman_test.exe

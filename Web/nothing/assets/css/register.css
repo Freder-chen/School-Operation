@@ -1,0 +1,78 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+body, input, select, textarea {
+    font-family: "Taviraj", serif;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+/* Form */
+.box .content h2 {
+    color: #555;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0 0 1.5rem 0;
+}
+
+form .field.half.first {
+    margin-right: 2.5%;
+    width: 48%
+}
+form .field.half {
+    display: inline-block;
+    width: 48%;
+}
+form .field {
+    margin-bottom: 2rem;
+}
+    form label {
+        color: #555;
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 400;
+        margin: 0 0 1rem 0;
+    }
+        input[type="text"], input[type="password"], input[type="email"], select, textarea {
+            background: rgba(144, 144, 144, 0.075);
+            border-color: rgba(144, 144, 144, 0.25);
+            border-radius: 4px;
+            border: solid 1px;
+            color: inherit;
+            display: block;
+            outline: 0;
+            padding: 0 1rem;
+            text-decoration: none;
+            width: 100%;
+        }
+        input[type="text"], input[type="password"], input[type="email"], select {
+            height: 2.75rem;
+        }
+    ul.actions {
+        cursor: default;
+        list-style: none;
+        padding-left: 0;
+    }
+        ul.actions .button.special {
+            background-color: #5AA6ED;
+            color: #ffffff !important;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            border-radius: 4px;
+            border: 0;
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 400;
+            height: 2.85rem;
+            line-height: 2.95rem;
+            padding: 0 1.5rem;
+            margin: 0;
+            text-align: center;
+            text-decoration: none;
+            white-space: nowrap;
+            text-transform: uppercase;
+            font: 400 11px system-ui;
+        }

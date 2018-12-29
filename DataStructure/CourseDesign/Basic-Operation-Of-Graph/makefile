@@ -11,5 +11,8 @@ graph.o: graph.c graph.h
 graph_test.o: graph_test.c
 	gcc -c graph_test.c -o graph_test.o
 
+run:
+	./graph_test
+
 clean:
 	rm -f graph_test graph_test.exe

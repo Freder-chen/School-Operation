@@ -8,5 +8,8 @@ sort.o: sort.c sort.h
 sort_analysis.o: sort_analysis.c
 	gcc -c sort_analysis.c -o sort_analysis.o
 
+run:
+	./sort_analysis
+
 clean:
 	rm -f sort_analysis sort_analysis.exe

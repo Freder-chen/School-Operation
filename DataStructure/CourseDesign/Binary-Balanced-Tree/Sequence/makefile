@@ -8,5 +8,8 @@ bst.o: bst.c bst.h
 bst_test.o: bst_test.c
 	gcc -c bst_test.c -o bst_test.o
 
+run:
+	./bst_test
+
 clean:
 	rm -f bst_test bst_test.exe
