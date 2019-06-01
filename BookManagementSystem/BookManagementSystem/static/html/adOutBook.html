@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>图书管理员-图书出库</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../style/adMain.css">
+  <link rel="stylesheet" type="text/css" href="../style/adBook.css">
+	<script type="text/javascript" src="../script/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript">
+	   $(document).ready(function() {
+        $(".left ul li:eq(3)").css("color","#FFF");
+        $(".left ul li:eq(3)").css("background-color","#BBCAF1");
+        $(".left ul").find('li:eq(3)').children(".trig").css('display', 'block');
+        $(".data input").attr('disabled', 'true');
+        $(".data input").eq(0).removeAttr('disabled');
+
+        $(".noadd_btn").click(function() {
+          $.ajax({
+            type: "POST",
+            dataType: 'json',
+            url: "../get-book",
+            data: {
+              'id': $("#id > input").val(),
+            },
+            success: function (result) {
+              jdata = JSON.parse(JSON.stringify(result))
+              if (jdata['status'] == 'success') {
+                $('#name > input').val(jdata['data']['name'])
+                $('#author > input').val(jdata['data']['author'])
+                $('#translator > input').val(jdata['data']['translator'])
+                $('#price > input').val(jdata['data']['price'])
+                $('#isbn_code > input').val(jdata['data']['isbn_code'])
+                $('#come_up_time > input').val(jdata['data']['come_up_time'])
+                $('#publish_company > input').val(jdata['data']['publish_company'])
+                $('#status > input').val(jdata['data']['status'])
+                $('#entering_men > input').val(jdata['data']['entering_men'])
+              } else {
+                alert(jdata['status'])
+              }
+            },
+            error: function() { alert("异常！") },
+          })
+        })
+
+        $(".add_btn").click(function() {
+          $.ajax({
+            type: "POST",
+            dataType: 'json',
+            url: "../del-book",
+            data: { 'id': $("#id > input").val() },
+            success: function (result) {
+              jdata = JSON.parse(JSON.stringify(result))
+              alert(jdata['status'])
+            },
+            error: function() { alert("异常！") },
+          })
+        })
+	   });
+	</script>
+</head>
+<body>
+   <div class="ad_page">
+   	<div class="header">
+   		<img src="../images/logo.png">
+   		<div class="state">
+   			<div class="ad_name"><div class="fa_i"><i class="fa fa-user"></i></div><a href="../html/adPersonal.html">管理员01</a></div>
+        <div class="out"><a href="../html/index.html">退出</a></div>
+   		</div>
+   		<div class="clear"></div>
+   	</div>
+   	<div class="content">
+   		<div class="left">
+   			<ul>
+			   <a href="../html/adBorrowBook.html"><li>读者借书<div class="trig"></div></li></a>
+         <a href="../html/adReturnBook.html"><li>读者还书<div class="trig"></div></li></a>
+         <a href="../html/adAddBook.html"><li>新书入库<div class="trig"></div></li></a>
+         <a href="../html/adOutBook.html"><li>图书出库<div class="trig"></div></li></a>
+         <a href="../html/adAlterBook.html"><li>修改图书信息<div class="trig"></div></li></a>
+         <a href="../html/adCheckBook.html"><li>查阅借阅记录<div class="trig"></div></li></a>
+         <a href="../html/adSearchBook.html"><li>查阅图书信息<div class="trig"></div></li></a>
+         <a href="../html/adPersonal.html"><li>管理员中心<div class="trig"></div></li></a>
+   			</ul>
+   		</div>
+   		<div class="right">
+      <!-- class="ad_data"的div中是图书管理员系统的切换部分 -->
+   			<div class="ad_data">
+   				<div id="id" class="data data_1"><label>图书编号</label><input placeholder="输入图书编号"></div>
+          <div id="name" class="data"><label>图书名称</label><input/></div>
+          <div id="author" class="data"><label>作者</label><input/></div>
+          <div id="translator" class="data"><label>译者</label><input/></div>
+          <div id="price" class="data"><label>价格</label><input/></div>
+          <div id="isbn_code" class="data"><label>ISBN编码</label><input/></div>
+          <div id="come_up_time" class="data"><label>出版社</label><input/></div>
+          <div id="publish_company" class="data"><label>出版日期</label><input/></div>
+          <div id="status" class="data"><label>借阅状态</label><input/></div>
+          <div id="entering_men" class="data"><label>入库者</label><input/></div>
+          <div class="add_btn">确认删除</div>
+          <div class="noadd_btn">查询</div>
+   			</div>
+   		</div>
+   		<div class="clear"></div>
+   	</div>
+   </div>
+</body>
+</html>

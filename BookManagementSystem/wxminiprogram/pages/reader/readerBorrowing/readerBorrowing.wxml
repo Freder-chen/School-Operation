@@ -1,0 +1,23 @@
+<!--pages/reader/readerBorrowing/readerBorrowing.wxml-->
+<i-message id="message" />
+
+<i-panel title="在借图书">
+  <view style="padding: 15px; font-size: 16px;">已借 {{amount}} 本 剩余可借 {{remain}} 本</view>
+  <scroll-view scroll-x="true" class='scrollClass'>
+    <view class='table'>
+      <view class='table_header'>
+        <block wx:for="{{tableKeyList}}" wx:key="item">
+          <view class='th'><view class="cell_label">{{item}}</view></view>
+        </block>
+      </view>
+      <block wx:for="{{tableDataList}}" wx:key="item" wx:for-index="index">
+        <view class='table_main'>
+        <view class='td'><view class='table_Text_class'>{{index+1}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.user_id}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.book_name}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.should_time}}</view></view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</i-panel>

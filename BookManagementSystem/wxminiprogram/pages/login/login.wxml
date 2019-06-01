@@ -1,0 +1,9 @@
+<!--pages/login/login.wxml-->
+
+<i-message id="message" />
+
+<i-panel title="登陆">
+  <i-input title="账号" bind:change="bindUserNameInput" placeholder="用户名" maxlength="50" />
+  <i-input title="密码" bind:change="bindUserPasswordInput" placeholder="密码"  maxlength="50" type="password" />
+  <i-button type="ghost" shape="circle" size="small" bind:click="login_click" >登陆</i-button>
+</i-panel>

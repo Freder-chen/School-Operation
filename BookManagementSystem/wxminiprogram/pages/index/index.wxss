@@ -1,0 +1,29 @@
+/**index.wxss**/
+.header {
+  position: absolute;
+  top:0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.header view:nth-of-type(1) {
+  flex-grow: 1;
+  text-align: center;
+  vertical-align: center;
+  justify-content: center;
+}
+
+.header view:nth-of-type(2) {
+  flex-grow: 1;
+  text-align: center;
+  vertical-align: center;
+  justify-content: center;
+}
+
+.header view:nth-of-type(3) {
+  flex-grow: 1;
+  text-align: center;
+  vertical-align: center;
+  justify-content: center;
+}

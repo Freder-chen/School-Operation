@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-message": "../../../lib/message/index",
+    "i-button": "../../../lib/button/index",
+    "i-input": "../../../lib/input/index",
+    "i-panel": "../../../lib/panel/index"
+  }
+}

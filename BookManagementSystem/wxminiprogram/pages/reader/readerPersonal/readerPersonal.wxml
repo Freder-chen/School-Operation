@@ -1,0 +1,17 @@
+<!--pages/readerPersonal/readerPersonal.wxml-->
+<i-message id="message" />
+
+<i-panel title="基本资料">
+  <view style="padding: 15px;">
+    <i-input title="借阅号" value="{{id}}" bind:change="bindIdInput" maxlength="50" />
+    <i-input title="用户名" value="{{name}}" bind:change="bindNameInput" maxlength="50" />
+    <i-input title="学院" value="{{departments}}" bind:change="bindDepartmentsInput" maxlength="50" />
+    <i-input title="专业" value="{{major}}" bind:change="bindMajorInput" maxlength="50" />
+    <i-input title="电话" value="{{phone}}" bind:change="bindPhoneInput" maxlength="50" />
+    <i-input title="邮箱" value="{{email}}" bind:change="bindEmailInput" maxlength="50" />
+    <i-input title="借阅上限" value="{{borrow_limit}}" bind:change="bindBorrowLimitInput" maxlength="50" type="number" />
+    <i-input title="借阅期限" value="{{borrow_period}}" bind:change="bindBorrowPeriodInput" maxlength="50" type="number" />
+    <i-input title="已借数量" value="{{borrow_amount}}" bind:change="bindBorrowAmountInput" maxlength="50" type="number" />
+  </view>
+</i-panel>
+

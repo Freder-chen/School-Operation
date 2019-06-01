@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "i-grid": "../../../lib/grid/index",
+    "i-grid-item": "../../../lib/grid-item/index",
+    "i-grid-icon": "../../../lib/grid-icon/index",
+    "i-grid-label": "../../../lib/grid-label/index",
+    "i-icon": "../../../lib/icon/index"
+  }
+}

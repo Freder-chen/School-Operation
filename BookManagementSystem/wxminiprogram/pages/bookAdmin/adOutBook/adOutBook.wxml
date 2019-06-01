@@ -1,0 +1,19 @@
+<!--pages/bookAdmin/adOutBook/adOutBook.wxml-->
+<i-message id="message" />
+
+<i-panel title="图书出库">
+  <view style="padding: 15px; ">
+    <i-input title="图书编号 " value="{{id}}" bindblur="bindIdInput" maxlength="50" />
+    <i-input title="图书名称 " value="{{name}}" bindblur="bindNameInput" maxlength="50 " />
+    <i-input title="作者 " value="{{author}}" bindblur="bindAuthorInput" maxlength="50 " />
+    <i-input title="译者 " value="{{translator}}" bindblur="bindTranslatorInput" maxlength="50" />
+    <i-input title="价格" value="{{price}}" bindblur="bindPriceInput" maxlength="50" />
+    <i-input title="ISBM编码" value="{{isbnCode}}" bindblur="bindIsbnCodeInput" maxlength="50" />
+    <i-input title="出版社" value="{{publishCompany}}" bindblur="bindPublishCompanyInput" maxlength="50" type="number" />
+    <i-input title="出版日期" value="{{comeUpTime}}" bindblur="bindComeUpTimeInput" maxlength="50" type="number" />
+    <i-input title="借阅状态" value="{{status}}" bindblur="bindStatusInput" maxlength="50" type="number" />
+    <i-input title="入库者" value="{{enteringMen}}" bindblur="bindEnteringMenInput" maxlength="50" type="number" />
+    <i-button type="ghost" shape="circle" size="small" bind:click="getBookClick">查询</i-button>
+    <i-button type="ghost" shape="circle" size="small" bind:click="delBookClick">确认删除</i-button>
+  </view>
+</i-panel>

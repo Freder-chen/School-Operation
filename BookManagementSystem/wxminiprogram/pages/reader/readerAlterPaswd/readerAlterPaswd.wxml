@@ -1,0 +1,12 @@
+<!--pages/reader/readerAlterPaswd/readerAlterPaswd.wxml-->
+<!--pages/adminPersonal/adminPersonal.wxml-->
+<i-message id="message" />
+
+<i-panel title="修改密码">
+  <view style="padding: 15px;">
+    <i-input title="原密码" value="{{oldPassword}}" bindblur="bindOldPasswordInput" maxlength="50" type="password" />
+    <i-input title="新密码" value="{{newPassword}}" bindblur="bindNewPasswordInput" maxlength="50" type="password" />
+    <i-input title="确认新密码" value="{{againPassword}}" bindblur="bindAgainPasswordInput" maxlength="50" type="password" />
+    <i-button type="ghost" shape="circle" size="small" bind:click="alterSystemAdminClick" >确认修改</i-button>
+  </view>
+</i-panel>

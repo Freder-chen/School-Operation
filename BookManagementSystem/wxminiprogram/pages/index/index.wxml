@@ -1,0 +1,11 @@
+<view class='container'>
+  <view class='header'>
+    <view></view>
+    <view>首页</view>
+    <view><text bindtap="login_navigate">登陆</text></view>
+  </view>
+  <view class='content'>
+    <!-- <view><text bindtap="login_navigate">登陆</text></view> -->
+  </view>
+</view>
+

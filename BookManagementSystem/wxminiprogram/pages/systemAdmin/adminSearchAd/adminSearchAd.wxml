@@ -1,0 +1,24 @@
+<!--pages/adminSearchAd/adminSearchAd.wxml-->
+<i-message id="message" />
+
+<i-panel title="查看管理员信息">
+  <i-input title="搜索" value="{{search}}" bindblur="bindSearchInput" maxlength="50" placeholder="输入搜索信息" />
+  <i-button type="ghost" shape="circle" size="small" bind:click="searchClick" >搜索</i-button>
+  <scroll-view scroll-x="true" class='scrollClass'>
+    <view class='table'>
+      <view class='table_header'>
+        <block wx:for="{{userKeyList}}" wx:key="item">
+          <view class='th'><view class="cell_label">{{item}}</view></view>
+        </block>
+      </view>
+      <block wx:for="{{userDataList}}" wx:key="item">
+        <view class='table_main'>
+          <view class='td'><view class='table_Text_class'>{{item.id}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.name}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.phone}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.email}}</view></view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</i-panel>

@@ -1,0 +1,25 @@
+<!--pages/adBorrowBook/adBorrowBook.wxml-->
+<i-message id="message" />
+
+<i-panel title="读者借书">
+  <i-input title="借阅号" value="{{userId}}" bindblur="bindUserIdInput" maxlength="50" />
+  <i-input title="图书编号" value="{{bookId}}" bindblur="bindBookIdInput" maxlength="50" />
+  <i-button type="ghost" shape="circle" size="small" bind:click="findUserBorrowingClick" >验证</i-button>
+  <i-button type="ghost" shape="circle" size="small" bind:click="borrowBookClick" >确认借阅</i-button>
+  <scroll-view scroll-x="true" class='scrollClass'>
+    <view class='table'>
+      <view class='table_header'>
+        <block wx:for="{{tableKeyList}}" wx:key="item">
+          <view class='th'><view class="cell_label">{{item}}</view></view>
+        </block>
+      </view>
+      <block wx:for="{{tableDataList}}" wx:key="item">
+        <view class='table_main'>
+          <view class='td'><view class='table_Text_class'>{{item.user_id}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.book_name}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.should_time}}</view></view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</i-panel>

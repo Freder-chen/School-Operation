@@ -1,0 +1,15 @@
+<!--pages/reader/readerIndex/readerIndex.wxml-->
+
+<i-panel title="读者">
+  <view style="padding: 15px; font-size: 16px;">读者</view>
+  <i-grid-item wx:for="{{item_data}}" wx:for-index="index" wx:for-key="item">
+    <view id="item_{{index}}" bindtap="itemClick">
+      <i-grid-icon>
+        <i-icon type="{{item.icon_type}}" size="30" color="#80848f" />
+      </i-grid-icon>
+      <i-grid-label>{{item.text}}</i-grid-label>
+    </view>
+  </i-grid-item>
+</i-panel>
+
+

@@ -1,0 +1,17 @@
+<!--pages/bookAdmin/adAddBook/adAddBook.wxml-->
+<i-message id="message" />
+
+<i-panel title="新书入库">
+  <view style="padding: 15px; ">
+    <i-input title="图书编号 " value="{{id}}" bind:change="bindIdInput" maxlength="50 " />
+    <i-input title="图书名称 " value="{{name}}" bind:change="bindNameInput" maxlength="50 " />
+    <i-input title="作者 " value="{{author}}" bind:change="bindAuthorInput" maxlength="50 " />
+    <i-input title="译者 " value="{{translator}}" bind:change="bindTranslatorInput" maxlength="50" />
+    <i-input title="价格" value="{{price}}" bind:change="bindPriceInput" maxlength="50" />
+    <i-input title="ISBM编码" value="{{isbnCode}}" bind:change="bindIsbnCodeInput" maxlength="50" />
+    <i-input title="出版社" value="{{publishCompany}}" bind:change="bindPublishCompanyInput" maxlength="50" />
+    <i-input title="出版日期" value="{{comeUpTime}}" bind:change="bindComeUpTimeInput" maxlength="50" />
+    <i-input title="入库者" value="{{enteringMen}}" bind:change="bindEnteringMenInput" maxlength="50" type="number" />
+    <i-button type="ghost" shape="circle" size="small" bind:click="addBookClick">确认加入</i-button>
+  </view>
+</i-panel>

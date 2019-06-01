@@ -1,0 +1,34 @@
+<!--pages/bookAdmin/adSearchBook/adSearchBook.wxml-->
+
+<i-message id="message" />
+
+<i-panel title="查看借阅记录">
+  <i-input title="搜索" value="{{search}}" bindblur="bindSearchInput" maxlength="50" placeholder="输入搜索信息" />
+  <i-button type="ghost" shape="circle" size="small" bind:click="searchClick" >搜索</i-button>
+  <scroll-view scroll-x="true" class='scrollClass'>
+    <view class='table'>
+      <view class='table_header'>
+        <block wx:for="{{tableKeyList}}" wx:key="item">
+          <view class='th'><view class="cell_label">{{item}}</view></view>
+        </block>
+      </view>
+      <block wx:for="{{tableDataList}}" wx:key="item">
+        <view class='table_main'>
+          <view class='td'><view class='table_Text_class'>{{item.book_id}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.book_name}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.book_author}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.book_translator}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.book_price}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.book_publish_company}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.book_come_up_time}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.book_isbn_code}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.book_entering_men}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.book_entering_date}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.book_status}}</view></view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</i-panel>
+
+

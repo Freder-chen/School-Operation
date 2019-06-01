@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    
+    "pages/systemAdmin/systemAdminIndex/systemAdminIndex",
+    "pages/systemAdmin/adminAddReader/adminAddReader",
+    "pages/systemAdmin/adminOutReader/adminOutReader",
+    "pages/systemAdmin/adminAlterReader/adminAlterReader",
+    "pages/systemAdmin/adminAddAd/adminAddAd",
+    "pages/systemAdmin/adminOutAd/adminOutAd",
+    "pages/systemAdmin/adminAlterAd/adminAlterAd",
+    "pages/systemAdmin/adminSearchReader/adminSearchReader",
+    "pages/systemAdmin/adminSearchAd/adminSearchAd",
+    "pages/systemAdmin/adminPersonal/adminPersonal",
+
+    "pages/bookAdmin/bookAdminIndex/bookAdminIndex",
+    "pages/bookAdmin/adBorrowBook/adBorrowBook",
+    "pages/bookAdmin/adReturnBook/adReturnBook",
+    "pages/bookAdmin/adAddBook/adAddBook",
+    "pages/bookAdmin/adOutBook/adOutBook",
+    "pages/bookAdmin/adAlterBook/adAlterBook",
+    "pages/bookAdmin/adCheckBook/adCheckBook",
+    "pages/bookAdmin/adSearchBook/adSearchBook",
+    "pages/bookAdmin/adPersonal/adPersonal",
+
+    "pages/reader/readerIndex/readerIndex",
+    "pages/reader/readerPersonal/readerPersonal",
+    "pages/reader/readerAlterData/readerAlterData",
+    "pages/reader/readerAlterPaswd/readerAlterPaswd",
+    "pages/reader/readerBorrowing/readerBorrowing",
+    "pages/reader/readerBorrowed/readerBorrowed"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "component": true
+}

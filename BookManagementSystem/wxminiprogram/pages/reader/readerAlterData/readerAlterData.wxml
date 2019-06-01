@@ -1,0 +1,12 @@
+<!--pages/reader/readerAlterData/readerAlterData.wxml-->
+<!--pages/adminAlterReader/adminAlterReader.wxml-->
+<i-message id="message" />
+
+<i-panel title="修改资料">
+  <view style="padding: 15px;">
+    <i-input title="电话" value="{{phone}}" bindblur="bindPhoneInput" maxlength="50" />
+    <i-input title="邮箱" value="{{email}}" bindblur="bindEmailInput" maxlength="50" />
+    <i-button type="ghost" shape="circle" size="small" bind:click="alterReaderClick" >确认修改</i-button>
+  </view>
+</i-panel>
+

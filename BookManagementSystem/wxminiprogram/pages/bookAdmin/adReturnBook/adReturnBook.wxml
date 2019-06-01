@@ -1,0 +1,9 @@
+<!--pages/bookAdmin/adReturnBook/adReturnBook.wxml-->
+<i-message id="message" />
+
+<i-panel title="读者还书">
+  <view style="padding: 15px;">
+    <i-input title="图书编号" value="{{bookId}}" bindblur="bindBookIdInput" maxlength="50" />
+    <i-button type="ghost" shape="circle" size="small" bind:click="returnBookClick" >确认归还</i-button>
+  </view>
+</i-panel>

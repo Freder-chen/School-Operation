@@ -1,0 +1,23 @@
+<!--pages/reader/readerBorrowed/readerBorrowed.wxml-->
+<i-message id="message" />
+
+<i-panel title="借阅记录">
+  <scroll-view scroll-x="true" class='scrollClass'>
+    <view class='table'>
+      <view class='table_header'>
+        <block wx:for="{{tableKeyList}}" wx:key="item">
+          <view class='th'><view class="cell_label">{{item}}</view></view>
+        </block>
+      </view>
+      <block wx:for="{{tableDataList}}" wx:key="item" wx:for-index="index">
+        <view class='table_main'>
+        <view class='td'><view class='table_Text_class'>{{index+1}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.user_id}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.book_name}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.borrow_time}}</view></view>
+          <view class='td'><view class='table_Text_class'>{{item.return_time}}</view></view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</i-panel>
